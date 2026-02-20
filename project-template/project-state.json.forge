@@ -1,0 +1,41 @@
+{
+  "project_id": "{{PROJECT_ID}}",
+  "project_name": "{{PROJECT_NAME}}",
+  "system_id": "ai-centric-apps",
+  "created": "{{CREATED_DATE}}",
+  "current_stage": "01-scoping",
+  "status": "active",
+  "pipeline": {
+    "01-scoping": {"status": "not_started", "name": "Domain and Intent Scoping"},
+    "02-agent-architecture": {"status": "not_started", "name": "Agent Architecture Design"},
+    "03-context-design": {"status": "not_started", "name": "Context Interface Design"},
+    "04-ai-integration": {"status": "not_started", "name": "AI Platform Integration"},
+    "05-implementation": {"status": "not_started", "name": "Application Implementation"},
+    "06-evaluation": {"status": "not_started", "name": "Agent Evaluation and Testing"},
+    "07-deployment": {"status": "not_started", "name": "Deployment and Packaging"}
+  },
+  "stage_metrics": {
+    "01-scoping": {"started": null, "completed": null, "duration_min": null, "rework_count": 0, "gate_attempts": 0, "issues_found": 0, "decisions": 0},
+    "02-agent-architecture": {"started": null, "completed": null, "duration_min": null, "rework_count": 0, "gate_attempts": 0, "issues_found": 0, "decisions": 0},
+    "03-context-design": {"started": null, "completed": null, "duration_min": null, "rework_count": 0, "gate_attempts": 0, "issues_found": 0, "decisions": 0},
+    "04-ai-integration": {"started": null, "completed": null, "duration_min": null, "rework_count": 0, "gate_attempts": 0, "issues_found": 0, "decisions": 0},
+    "05-implementation": {"started": null, "completed": null, "duration_min": null, "rework_count": 0, "gate_attempts": 0, "issues_found": 0, "decisions": 0},
+    "06-evaluation": {"started": null, "completed": null, "duration_min": null, "rework_count": 0, "gate_attempts": 0, "issues_found": 0, "decisions": 0},
+    "07-deployment": {"started": null, "completed": null, "duration_min": null, "rework_count": 0, "gate_attempts": 0, "issues_found": 0, "decisions": 0}
+  },
+  "waiting_on": [],
+  "issues": [],
+  "metadata": {
+    "description": "{{PROJECT_DESCRIPTION}}",
+    "requirements": "{{PROJECT_REQUIREMENTS}}"
+  },
+  "bom_summary": {},
+  "deliverables": [],
+  "history": [
+    {
+      "timestamp": "{{CREATED_DATE}}",
+      "action": "project_created",
+      "details": "Project initialized from template"
+    }
+  ]
+}

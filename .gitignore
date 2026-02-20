@@ -1,0 +1,41 @@
+# Projects (each has own git repo)
+projects/*/
+# But DO track the registry
+!projects/registry.json
+# Worktree directories
+*-ws-*/
+# Workspace state (machine-specific)
+.system-workspace-active.json
+# Machine-specific Claude settings
+.claude/settings.local.json
+# Hook runtime files (auto-managed per-session)
+.claude/hooks/session-env.sh
+.claude/hooks/sessions/
+# Python
+.venv/
+__pycache__/
+*.pyc
+# MCP server artifacts
+tools/*/node_modules/
+tools/*/dist/
+tools/*/.env
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+# Editor
+.vscode/
+.idea/
+# Domain-specific: AI/Python/Node project artifacts
+node_modules/
+dist/
+build/
+*.egg-info/
+.eggs/
+*.whl
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+exports/

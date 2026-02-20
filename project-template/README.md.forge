@@ -1,0 +1,27 @@
+# {{PROJECT_NAME}}
+
+**Project ID:** {{PROJECT_ID}}
+**System:** AI-Centric Apps
+**Created:** {{CREATED_DATE}}
+
+## Description
+
+{{PROJECT_DESCRIPTION}}
+
+## Pipeline Progress
+
+{{STAGES_CHECKLIST}}
+
+## Stage Directories
+
+{{STAGES_DIRECTORIES}}
+
+## Quick Reference
+
+- **Project state:** `project-state.json`
+- **Current stage:** Check project-state.json `current_stage` field
+- **Issues:** Check project-state.json `issues` array
+
+## Notes
+
+{{PROJECT_NOTES}}

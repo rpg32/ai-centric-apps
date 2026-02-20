@@ -1,0 +1,16 @@
+{
+  "forge_version": "2.0.0",
+  "system_id": "ai-centric-apps",
+  "system_name": "AI-Centric Apps",
+  "description": "Designing and building software applications where AI agents and large language models are the foundational architecture -- not bolted on to existing software, but the core around which the entire application is constructed.",
+  "created": "2026-02-20",
+  "exported": null,
+  "pipeline_stages": ["01-scoping", "02-agent-architecture", "03-context-design", "04-ai-integration", "05-implementation", "06-evaluation", "07-deployment"],
+  "required_tools": ["anthropic", "openai", "pydantic", "chromadb", "fastapi", "uvicorn", "promptfoo", "pytest", "ruff", "docker", "git", "python", "node"],
+  "mcp_servers": ["chroma-mcp", "playwright-mcp", "promptfoo-mcp", "context7", "@modelcontextprotocol/server-filesystem"],
+  "python_requirements": ["anthropic", "openai", "pydantic", "chromadb", "fastapi", "uvicorn[standard]", "sentence-transformers", "langchain", "langchain-anthropic", "langchain-openai", "langchain-text-splitters", "langgraph", "litellm", "pydantic-ai", "sqlalchemy", "alembic", "pytest", "pytest-asyncio", "pytest-cov", "playwright", "ruff", "guardrails-ai", "langfuse", "jsonschema"],
+  "has_projects": false,
+  "has_tools": false,
+  "has_books": false,
+  "has_git_history": true
+}

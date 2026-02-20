@@ -1,0 +1,22 @@
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+# Python
+__pycache__/
+*.pyc
+# Editor
+.vscode/
+.idea/
+# Domain-specific generated outputs
+node_modules/
+dist/
+build/
+.venv/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
