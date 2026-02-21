@@ -264,6 +264,7 @@ All evolution activity is tracked in `project-state.json` under the `work_units`
 
 These commands manage system skills and knowledge outside of the pipeline:
 
+- `/quickstart` — Guided first-time walkthrough of this system's structure, commands, and pipeline
 - `/skill-update {skill-path}` — Improve an existing skill with new knowledge or corrections
 - `/digest [source]` — Extract domain knowledge from reference material (files or URLs) into skills
 - `/design-review` — Review project design decisions against domain best practices

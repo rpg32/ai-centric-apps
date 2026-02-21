@@ -1,11 +1,11 @@
 {
-  "forge_version": "2.4.0",
+  "forge_version": "2.5.0",
   "system_id": "ai-centric-apps",
   "system_name": "AI-Centric Apps",
   "description": "Designing and building software applications where AI agents and large language models are the foundational architecture -- not bolted on to existing software, but the core around which the entire application is constructed.",
   "created": "2026-02-20",
   "exported": null,
-  "last_sync_date": "2026-02-20T23:00:00Z",
+  "last_sync_date": "2026-02-21T00:00:00Z",
   "pipeline_stages": ["01-scoping", "02-agent-architecture", "03-context-design", "04-ai-integration", "05-implementation", "06-evaluation", "07-deployment"],
   "required_tools": ["anthropic", "openai", "pydantic", "chromadb", "fastapi", "uvicorn", "promptfoo", "pytest", "ruff", "docker", "git", "python", "node"],
   "mcp_servers": ["chroma-mcp", "playwright-mcp", "promptfoo-mcp", "context7", "@modelcontextprotocol/server-filesystem"],
@@ -32,6 +32,16 @@
         "Knowledge Pattern: agent pattern template updated with expanded checklists and convergent multi-agent section",
         "Knowledge Pattern: skill template updated with worked example requirements"
       ]
+    },
+    {
+      "date": "2026-02-21",
+      "from_version": "2.4.0",
+      "to_version": "2.5.0",
+      "changes_applied": [
+        "New Command: quickstart.md — guided first-time walkthrough of system structure, commands, and pipeline",
+        "Template Logic: CLAUDE.md — added /quickstart to Maintenance Commands section"
+      ],
+      "changes_advisory": []
     }
   ]
 }
