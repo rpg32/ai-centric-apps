@@ -335,14 +335,15 @@ Practical tip: avoid two instances editing the same file simultaneously. Working
 
 ## Environment Variables
 
-The system uses per-session environment files so multiple Claude Code instances don't cross-contaminate env vars. Three hooks and a shell prefix work together:
+The system uses per-session environment files so multiple Claude Code instances don't cross-contaminate env vars. Three hooks work together:
 
 1. **SessionStart hook** — detects workspace state, writes `sessions/<session_id>.sh` with `SYSTEM_*` exports
 2. **PreToolUse:Bash hook** — writes current `CLAUDE_SESSION_ID` to `session-env.sh` right before each Bash command
-3. **Shell prefix** (`shell-prefix.sh`) — sources `session-env.sh` to get session ID, then sources the per-session env file
-4. **SessionEnd hook** — deletes the per-session env file on session close
+3. **SessionEnd hook** — deletes the per-session env file on session close
 
 These persist across `/clear` and context compaction. When workspace state changes (create/close), the env vars update immediately via direct session file writes.
+
+**Note:** Environment variables written by hooks are available in Bash commands but must be resolved explicitly (e.g., `python -c "import os; print(os.environ.get('SYSTEM_ACTIVE_DIR', ''))"`) since Read/Write/Edit/Glob/Grep tools cannot expand shell variables.
 
 | Variable | Always Set | Description |
 |----------|-----------|-------------|
@@ -352,16 +353,20 @@ These persist across `/clear` and context compaction. When workspace state chang
 | `SYSTEM_WORKSPACE_BRANCH` | Yes | Git branch (blank when no workspace active) |
 | `CLAUDE_SESSION_ID` | Yes | Claude Code session identifier (set by PreToolUse hook) |
 
+### CLAUDE_CODE_SHELL_PREFIX — Do NOT Use
+
+Do NOT set `CLAUDE_CODE_SHELL_PREFIX`. It applies to ALL stdio subprocess spawns, not just Bash commands — this includes MCP server processes. If the prefix script fails, it kills MCP servers on startup.
+
 ### CLAUDE_ENV_FILE — Do NOT Use
 
-Do NOT set `CLAUDE_ENV_FILE` in any settings file. It causes a race condition with the shell prefix and is broken on Windows. The prefix alone handles everything.
+Do NOT set `CLAUDE_ENV_FILE` in any settings file. It causes a race condition and is broken on Windows.
 
 ### Key Files
 
 ```
 .claude/hooks/
 ├── hook-handler.sh        # Handles SessionStart, PreToolUse:Bash, SessionEnd
-├── shell-prefix.sh        # Runs before every Bash command, sources the right env
+├── shell-prefix.sh        # DEPRECATED — kept for reference, no longer used
 ├── session-env.sh         # (auto-managed) Contains current CLAUDE_SESSION_ID
 └── sessions/              # (auto-managed) One env file per active session
     └── <session-id>.sh

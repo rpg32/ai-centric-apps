@@ -84,24 +84,6 @@ export SYSTEM_WORKSPACE_NAME="$SYSTEM_WORKSPACE_NAME"
 export SYSTEM_WORKSPACE_BRANCH="$SYSTEM_WORKSPACE_BRANCH"
 EOF
 
-    # Write absolute shell prefix path to settings.local.json
-    # Resolves the CWD-relative path issue — CLAUDE_CODE_SHELL_PREFIX env values
-    # are single-quoted by Claude Code (no expansion), so must be a literal absolute path
-    PREFIX_PATH="$HOOKS_DIR/shell-prefix.sh"
-    SETTINGS_LOCAL="$HOOKS_DIR/../settings.local.json"
-    python -c "
-import json, sys
-path, prefix = sys.argv[1], sys.argv[2]
-try:
-    with open(path, 'r') as f:
-        data = json.load(f)
-except:
-    data = {}
-data.setdefault('env', {})['CLAUDE_CODE_SHELL_PREFIX'] = prefix
-with open(path, 'w') as f:
-    json.dump(data, f, indent=2)
-    f.write('\n')
-" "$SETTINGS_LOCAL" "$PREFIX_PATH"
     ;;
 
   PreToolUse)

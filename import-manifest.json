@@ -1,10 +1,11 @@
 {
-  "forge_version": "2.0.0",
+  "forge_version": "2.4.0",
   "system_id": "ai-centric-apps",
   "system_name": "AI-Centric Apps",
   "description": "Designing and building software applications where AI agents and large language models are the foundational architecture -- not bolted on to existing software, but the core around which the entire application is constructed.",
   "created": "2026-02-20",
   "exported": null,
+  "last_sync_date": "2026-02-20T23:00:00Z",
   "pipeline_stages": ["01-scoping", "02-agent-architecture", "03-context-design", "04-ai-integration", "05-implementation", "06-evaluation", "07-deployment"],
   "required_tools": ["anthropic", "openai", "pydantic", "chromadb", "fastapi", "uvicorn", "promptfoo", "pytest", "ruff", "docker", "git", "python", "node"],
   "mcp_servers": ["chroma-mcp", "playwright-mcp", "promptfoo-mcp", "context7", "@modelcontextprotocol/server-filesystem"],
@@ -12,5 +13,25 @@
   "has_projects": false,
   "has_tools": false,
   "has_books": false,
-  "has_git_history": true
+  "has_git_history": true,
+  "upgrade_history": [
+    {
+      "date": "2026-02-20",
+      "from_version": "2.0.0",
+      "to_version": "2.4.0",
+      "changes_applied": [
+        "Infrastructure: CLAUDE.md env vars section updated — removed shell-prefix references, added CLAUDE_CODE_SHELL_PREFIX warning, added env var resolution note",
+        "New Command: env-check.md — verify environment prerequisites",
+        "New Command: workflow-list.md — list available workflows",
+        "New Command: workflow-start.md — enter named workflow",
+        "New Command: workflow-status.md — show workflow context",
+        "New Command: workflow-exit.md — return to consultation mode",
+        "New Skill: orchestration/SKILL.md — agent dispatch patterns, monitoring, failure recovery"
+      ],
+      "changes_advisory": [
+        "Knowledge Pattern: agent pattern template updated with expanded checklists and convergent multi-agent section",
+        "Knowledge Pattern: skill template updated with worked example requirements"
+      ]
+    }
+  ]
 }
